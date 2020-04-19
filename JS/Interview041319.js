@@ -1,12 +1,9 @@
-const addMin = (arr) => {
-    toSum = []
-    const add = arr1 => arr1.reduce((a, b) => a + b, 0);
-
-    for (i = 0; i < arr.length; i++) {
-        toSum.push(Math.min(...arr[i]))
+const alphabetic_order = (arr) => {
+    sorted = arr.sort()
+    for (i = 0; i < sorted.length; i++) {
+        console.log(sorted[i])
     }
-    console.log("to sum =", toSum)
-    console.log("Sum of all minimums", add(toSum));
 }
 
-addMin([[8, 4], [90, -1, 3], [9, 62], [-7, -1, -56, -6], [201], [76, 18]])
+alphabetic_order(['Waltz', 'Tango', 'Viennese Waltz', 'Foxtrot',
+    'Cha Cha', 'Samba', 'Rumba', 'Paso Doble', 'Jive'])
