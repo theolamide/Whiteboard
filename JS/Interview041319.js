@@ -7,3 +7,4 @@ const alphabetic_order = (arr) => {
 
 alphabetic_order(['Waltz', 'Tango', 'Viennese Waltz', 'Foxtrot',
     'Cha Cha', 'Samba', 'Rumba', 'Paso Doble', 'Jive'])
+alphabetic_order(['Lizzy', 'Sammy', 'Zainab', 'Taiwo', 'Folarin', 'Titi'])
