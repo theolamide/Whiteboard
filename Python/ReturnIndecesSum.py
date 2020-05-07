@@ -62,23 +62,48 @@ def ReturnIndicesObj(nums, target):
                 return (arr)
 
 
-start_time = time.time()
-# ReturnIndicesNew([0, 4, 3, 0], 0)
-ReturnIndices(A, 16021)
-end_time = time.time()
-total_time = end_time - start_time
-print("Old", total_time)
+def ReturnIndicesObjOnePass(nums, target):
+    NewObj = {}
+
+    for i in range(0, len(nums)):
+        if nums[i] in NewObj.keys():
+            NewObj[nums[i]].append(i)
+            ST = target - nums[i]
+        else:
+            NewObj[nums[i]] = [i]
+            ST = target - nums[i]
+            if ST in NewObj.keys():
+                arr = []
+                arr.append(NewObj[nums[i]][0])
+                arr.append(NewObj[ST][0])
+                print(arr)
+                return (arr)
+
+
+# start_time = time.time()
+# # ReturnIndicesNew([0, 4, 3, 0], 0)
+# ReturnIndices(A, 16021)
+# end_time = time.time()
+# total_time = end_time - start_time
+# print("Old", total_time)
+
+# start_time = time.time()
+# # ReturnIndicesNew([0, 4, 3, 0], 0)
+# ReturnIndicesNew(A, 16021)
+# end_time = time.time()
+# total_time = end_time - start_time
+# print("New", total_time)
 
 start_time = time.time()
-# ReturnIndicesNew([0, 4, 3, 0], 0)
-ReturnIndicesNew(A, 16021)
-end_time = time.time()
-total_time = end_time - start_time
-print("New", total_time)
-
-start_time = time.time()
-# ReturnIndicesObj([0, 4, 3, 0], 0)
-ReturnIndicesNew(A, 16021)
+ReturnIndicesObj([0, 4, 3, 0], 0)
+# ReturnIndicesNew(A, 16021)
 end_time = time.time()
 total_time = end_time - start_time
 print("Obj", total_time)
+
+start_time = time.time()
+ReturnIndicesObjOnePass([0, 4, 3, 0], 0)
+# ReturnIndicesObjOnePass(A, 16021)
+end_time = time.time()
+total_time = end_time - start_time
+print("Obj OnePass", total_time)
