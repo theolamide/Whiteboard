@@ -4,20 +4,6 @@ def hammingDistance(x, y):
         :type y: int
         :rtype: int
         """
-    # x_num = [char for char in bin(x)]
-    # y_num = [char for char in bin(y)]
-    # count = 0
-    # print("x", x_num)
-    # print("y", y_num)
-    # for i in range(len(x_num)):
-    #     if x_num[i] != y_num[i]:
-    #         count += 1
-    #         print(count)
-    #         return count
-    #     else:
-    #         print(count)
-    #         return count
-
     # Do an exclusive or
     exclusive_xy = x ^ y
     count = 0
@@ -29,7 +15,7 @@ def hammingDistance(x, y):
             count += 1
             exclusive_xy = exclusive_xy >> 1
 
-    print(x, y, count)
+    print("count", count)
 
 
 hammingDistance(4, 1)
@@ -38,3 +24,18 @@ hammingDistance(10, 0)
 hammingDistance(0, 0)
 hammingDistance(5, 2)
 hammingDistance(3, 3)
+
+# Brute for method
+# x_num = [char for char in bin(x)]
+# y_num = [char for char in bin(y)]
+# count = 0
+# print("x", x_num)
+# print("y", y_num)
+# for i in range(len(x_num)):
+#     if x_num[i] != y_num[i]:
+#         count += 1
+#         print(count)
+#         return count
+#     else:
+#         print(count)
+#         return count
