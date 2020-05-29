@@ -10,12 +10,12 @@ A = {
 
 def addIntegers(obj):
 
-    numArr = []
+    num = 0
     for key in obj:
         if type(obj[key]) == int:
-            numArr.append(obj[key])
+            num += obj[key]
 
-    print(sum(numArr))
+    print(num)
 
 
 addIntegers(A)

@@ -48,22 +48,41 @@ def find3Numbers(arr, target):
 
 
 A = [2, 4, 1, 5, 6, 8]
-find3Numbers(A, 7)
+# find3Numbers(A, 7)
+
+# This needs soem work. It is wrong.
 
 
-# def insertNodeAtPosition(head, data, position):
-#     LL = head
-#     count = 0
-#     NewNode = SinglyLinkedListNode(data)
-#     PreviousNode = head
+def threeNumberSum(arr, target):
+    arr.sort()
+    twoSumDict = {}
+    outputArray = []
 
-#     while count < position:
-#         PreviousNode = LL
-#         LL = LL.next
-#         count += 1
+    for i in range(0, len(arr)-1):
+        for j in range(i+1, len(arr)):
+            twoSum = arr[i]+arr[j]
+            if twoSum in twoSumDict.keys():
+                twoSumDict[twoSum].append([arr[i], arr[j]])
+            else:
+                twoSumDict[twoSum] = [[arr[i], arr[j]]]
 
-#     NextNext = PreviousNode.next
-#     PreviousNode.next = NewNode
-#     NewNode.next = NextNext
+    for i in range(0, len(arr)):
+        toFind = target - arr[i]
+        if toFind in twoSumDict.keys():
+            if len(twoSumDict[toFind]) > 1:
+                for j in range(0, len(twoSumDict[toFind])):
+                    twoSumDict[toFind][j].append(arr[i])
+                    outputArray.append(sorted(twoSumDict[toFind][j]))
+            else:
+                twoSumDict[toFind][0].append(arr[i])
+                outputArray.append(sorted(twoSumDict[toFind][0]))
 
-#     return head
+    # print(twoSumDict)
+    print(outputArray)
+
+
+# def twoSum(arr):
+#     collatedSum = []
+
+
+threeNumberSum(A, 7)

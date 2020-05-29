@@ -20,6 +20,8 @@ def checkMagazine(magazine, note):
     magCount = 0
     noteCount = 0
 
+    # print(len(magazineDict))
+
     if len(note) > len(magazine):
         print("No")
     else:
