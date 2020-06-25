@@ -51,5 +51,5 @@ def balancedBrackets(string):
     return False
 
 
-String = "He ran| |out of money, so he {| had} to stop playing | poker."
+String = "He ran| |out of money, so he {| had |} to stop playing | poker."
 balancedBrackets(String)

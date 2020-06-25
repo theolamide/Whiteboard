@@ -5,6 +5,7 @@ def objectCounter(arr):
     freqObject = Counter(arr)
     regularDict = dict(freqObject)
 
+    print(freqObject)
     print(regularDict)
 
 
