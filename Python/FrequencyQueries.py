@@ -1,41 +1,37 @@
 
 def frequencyQueries(queries):
     collection = {}
-    freqCollection = {}
-    threeOutput = []
+    cumOperationThree = []
 
     for i in range(0, len(queries)):
         operation = queries[i][0]
+        numToAdd = queries[i][1]
         if operation == 1:
-            if queries[i][1] in collection.keys():
-                collection[queries[i][1]] += 1
-                toPutInFreq = collection[queries[i][1]] - 1
-                if toPutInFreq in freqCollection.keys() and freqCollection[toPutInFreq] == queries[i][1]:
-                    freqCollection[collection[queries[i][1]]
-                                   ] = freqCollection.pop(toPutInFreq)
-                print(i, collection)
+            if numToAdd in collection.keys():
+                collection[numToAdd] += 1
             else:
-                collection[queries[i][1]] = 1
-                freqCollection[1] = queries[i][1]
-                print(i, collection)
+                collection[numToAdd] = 1
+            # print(collection)
 
         elif operation == 2:
-            if queries[i][1] in collection.keys() and collection[queries[i][1]] > 0:
-                if collection[queries[i][1]] in freqCollection.keys() and freqCollection[toPutInFreq] == queries[i][1]:
-                    freqCollection[collection[queries[i][1]] -
-                                   1] = freqCollection.pop(toPutInFreq)
-                collection[queries[i][1]] -= 1
-                print(i, collection)
+            if numToAdd in collection.keys() and collection[numToAdd] > 0:
+                collection[numToAdd] -= 1
+            # print(collection)
 
         elif operation == 3:
-            if queries[i][1] in freqCollection.keys():
-                threeOutput.append(1)
-            else:
-                threeOutput.append(0)
+            found = False
+            for key in collection:
+                if numToAdd == collection[key]:
+                    cumOperationThree.append(1)
+                    found = True
+                    break
+            if not found:
+                cumOperationThree.append(0)
 
-    print(threeOutput)
-    return threeOutput
+    print(cumOperationThree)
+    return cumOperationThree
 
 
-Query = [[1, 5], [1, 6], [3, 2], [1, 10], [1, 10], [1, 6], [2, 5], [3, 2]]
+Query = [[1, 3], [2, 3], [3, 2], [1, 4], [1, 5],
+         [1, 5], [1, 4], [3, 2], [2, 4], [3, 2]]
 frequencyQueries(Query)
