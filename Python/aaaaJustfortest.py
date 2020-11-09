@@ -72,21 +72,32 @@ from collections import OrderedDict
 # staircase(100)
 
 
-def firstNotRepeatingCharacter(s):
-    freqObj = OrderedDict()
+# def firstNotRepeatingCharacter(s):
+#     freqObj = OrderedDict()
 
-    for element in s:
-        if element in freqObj:
-            freqObj[element] += 1
-        else:
-            freqObj[element] = 1
+#     for element in s:
+#         if element in freqObj:
+#             freqObj[element] += 1
+#         else:
+#             freqObj[element] = 1
 
-    for key in freqObj:
-        if freqObj[key] == 1:
-            return key
+#     for key in freqObj:
+#         if freqObj[key] == 1:
+#             return key
 
-    return "_"
+#     return "_"
 
 
-charac = "charcater"
-firstNotRepeatingCharacter(charac)
+# charac = "charcater"
+# firstNotRepeatingCharacter(charac)
+def List(arr):
+    arr1 = []
+    for i in range(0, len(arr)):
+        val = arr[i]*1000
+        arr1.append(val)
+
+    print(arr1)
+
+
+num = [2, 3, 4]
+List(num)
