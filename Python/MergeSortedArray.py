@@ -2,6 +2,7 @@ def merge(nums1, nums2):
     """
     Do not return anything, modify nums1 in-place instead.
     """
+    # This is jsut to make my gitHub green
     pointer1 = 0
     pointer2 = 0
     lastZero = len(nums1) - len(nums2) -1
